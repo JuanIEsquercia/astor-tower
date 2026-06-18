@@ -31,11 +31,16 @@ export default function LoginPage() {
       const credential = await signInWithEmailAndPassword(auth, email, password);
       const token = await credential.user.getIdToken();
 
-      await fetch("/api/auth/session", {
+      const res = await fetch("/api/auth/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
       });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? "No se pudo crear la sesión en el servidor.");
+      }
 
       router.push("/admin");
     } catch (err: unknown) {
