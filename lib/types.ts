@@ -59,6 +59,15 @@ export interface Inmobiliaria {
   activa: boolean;
 }
 
+export interface AvanceObra {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  fecha: string; // ISO date string YYYY-MM-DD
+  videoUrl: string;
+  orden: number;
+}
+
 export interface SiteConfig {
   telefono: string;
   email: string;

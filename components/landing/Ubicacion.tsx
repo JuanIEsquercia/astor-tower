@@ -54,18 +54,24 @@ export default function Ubicacion() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={150} className="relative group/map">
-          <div className="rounded-3xl overflow-hidden luxury-shadow grayscale hover:grayscale-0 transition-all duration-1000 relative">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB24dzVENChNS2tPyN-w17Y2FHcSf9UeT7D_yFlUslIsrozTrQ8ooeJgTJDlXYrNSJBRbyD2UsscAJ4X6Ia6R5blNtaCpK0vVGy1NUhwX78AIrrs1uz7YU79uYok2aATQL180oymYhj14KT_EqxJpwJiwe_kGd2mCoR1P7l3dnDdfrrvkeRm8FNchDspnRylciV78IXcpZyqfCkPWBnhn0u3K4iN0F3mO1-Ok2U5KFTKuMoQd1Fgzwxj2U9Dd7ogSajAQkJ0Qkm_Q"
-              alt="Mapa de Ubicación — Corrientes Capital"
-              className="w-full h-[480px] object-cover transition-transform duration-1000 group-hover/map:scale-103"
+          <div className="rounded-3xl overflow-hidden luxury-shadow relative">
+            {/* Overlay desaturado que desaparece en hover */}
+            <div className="absolute inset-0 z-10 bg-primary/20 mix-blend-color pointer-events-none transition-opacity duration-1000 group-hover/map:opacity-0" />
+
+            <iframe
+              src="https://maps.google.com/maps?q=Buenos+Aires+1463,+Corrientes,+Argentina&z=16&output=embed&hl=es"
+              title="Ubicación de Astor Tower — Buenos Aires 1463, Corrientes"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-[480px] border-0"
             />
-            {/* Elegant overlay badge */}
+
             <a
               href="https://maps.google.com/?q=Buenos+Aires+1463,+Corrientes,+Argentina"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-6 right-6 px-6 py-3 bg-surface-container-lowest/90 backdrop-blur-md text-primary hover:text-secondary rounded-full font-label text-xs uppercase tracking-[0.15em] border border-outline-variant/30 hover:border-secondary/50 shadow-lg opacity-0 group-hover/map:opacity-100 translate-y-2 group-hover/map:translate-y-0 transition-all duration-500 flex items-center gap-2"
+              className="absolute bottom-6 right-6 z-20 px-6 py-3 bg-surface-container-lowest/90 backdrop-blur-md text-primary hover:text-secondary rounded-full font-label text-xs uppercase tracking-[0.15em] border border-outline-variant/30 hover:border-secondary/50 shadow-lg opacity-0 group-hover/map:opacity-100 translate-y-2 group-hover/map:translate-y-0 transition-all duration-500 flex items-center gap-2"
             >
               <span>Abrir Google Maps</span>
               <MapPin size={12} className="text-secondary" />

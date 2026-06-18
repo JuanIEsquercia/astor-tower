@@ -14,6 +14,7 @@ const quickLinks = [
   { href: "/admin/tipologias",   label: "Gestionar Tipologías",  desc: "Crear y editar tipos de unidades" },
   { href: "/admin/unidades",     label: "Gestionar Unidades",    desc: "Alta, edición y estado de venta" },
   { href: "/admin/amenities",    label: "Editar Amenities",      desc: "Actualizar la sección de lifestyle" },
+  { href: "/admin/avance-obra",  label: "Avance de Obra",        desc: "Subir videos de progreso de construcción" },
   { href: "/admin/contactos",    label: "Ver Mensajes",          desc: "Consultas recibidas del formulario" },
 ];
 

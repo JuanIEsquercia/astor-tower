@@ -12,6 +12,7 @@ import {
   ExternalLink,
   Store,
   Landmark,
+  HardHat,
 } from "lucide-react";
 
 const navItems = [
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/admin/tipologias",       label: "Tipologías",      icon: Building2 },
   { href: "/admin/unidades",         label: "Unidades",        icon: Layers },
   { href: "/admin/amenities",        label: "Amenities",       icon: Sparkles },
+  { href: "/admin/avance-obra",      label: "Avance de Obra",  icon: HardHat },
   { href: "/admin/desarrolladores",  label: "Desarrolladores", icon: Landmark },
   { href: "/admin/inmobiliarias",    label: "Inmobiliarias",   icon: Store },
   { href: "/admin/contactos",        label: "Contactos",       icon: Inbox },
