@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { getAdminAuth } from "@/lib/firebase-admin";
+import { getAdminAuth } from "@/lib/firebase-admin-auth";
 
 const SESSION_DURATION_MS = 60 * 60 * 24 * 7 * 1000; // 7 días
 const SESSION_DURATION_S  = 60 * 60 * 24 * 7;
