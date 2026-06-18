@@ -24,8 +24,10 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: "No se pudo crear la sesión" }, { status: 401 });
+  } catch (err) {
+    console.error("[POST /api/auth/session]", err);
+    const msg = err instanceof Error ? err.message : "Error desconocido";
+    return NextResponse.json({ error: msg }, { status: 401 });
   }
 }
 

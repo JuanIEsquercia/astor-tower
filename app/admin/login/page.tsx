@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Eye, EyeOff, AlertTriangle } from "lucide-react";
 import { isConfigured } from "@/lib/firebase";
 
 export default function LoginPage() {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
@@ -42,7 +40,8 @@ export default function LoginPage() {
         throw new Error(data.error ?? "No se pudo crear la sesión en el servidor.");
       }
 
-      router.push("/admin");
+      // Hard redirect para que el middleware lea la cookie recién seteada
+      window.location.assign("/admin");
     } catch (err: unknown) {
       const code = (err as { code?: string }).code;
       if (code === "auth/invalid-credential" || code === "auth/user-not-found") {
