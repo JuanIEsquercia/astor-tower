@@ -11,7 +11,7 @@ const DEFAULTS: SiteConfig = {
   barrio:     "La Cruz",
   instagram:  "",
   linkedin:   "",
-  footerDesc: "Arquitectura que trasciende. Un santuario de diseño y exclusividad en el litoral argentino.",
+  footerDesc: "Arquitectura que trasciende. Diseño y exclusividad en el litoral argentino.",
 };
 
 type Status = "idle" | "loading" | "saving" | "saved" | "error";

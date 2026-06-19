@@ -250,3 +250,13 @@ body {
   background-color: #f4f4f5;
   color: #0a0a0a;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRINT
+═══════════════════════════════════════════════════════════════════════════ */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
